@@ -9,8 +9,7 @@ RUN apk add --no-cache bash
 
 WORKDIR /app
 COPY . .
-ARG RAILWAY_SERVICE_ID
-RUN --mount=type=cache,id=s/${RAILWAY_SERVICE_ID}-uv,target=/root/.cache/uv \
+RUN --mount=type=cache,id=s/f6c8d473-6c7d-4094-a36b-42dff4b916cb-uv,target=/root/.cache/uv \
     uv sync --locked --no-dev
 
 CMD qwen3asr2api
